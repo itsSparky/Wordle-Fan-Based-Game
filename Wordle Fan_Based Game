@@ -1,0 +1,73 @@
+import random
+
+
+print("Welcome to Guess the Word! All credits go to Elijah Felton because I am the only one making this :(.")
+passwords = ["Trying", "Pianos", "Flyers", "Teller", "Reader", "Letter", "Lemons", "Purple", "Lights", "Booked", "Absent", "Swords", "Tablet", "Soccer", "Basket", "Golden", "Boxers", "Ignite", "Remote", "Litter", "Ponder", "Hoping",  "Runner", "Houses", "Warmer"]
+password = random.choice(passwords)
+password = password.lower()
+
+def guess():
+    guessword = input("Guess the six-letter word!")
+    if quit == True:
+        print(f"The password was {password}")
+    guessword = guessword.lower()
+    if guessword == password:
+        print("You won!")
+    while guessword != password:
+        if len(guessword) != 6:
+            print("Pick a 6 letter word!")
+            guessword = input("Guess the six-letter word!")
+            guessword = guessword.lower()
+            return
+        else:
+            if len(guessword) > len(password):
+                print("The password has less characters than this guess")
+            elif len(guessword) < len(password):
+                print("The password has a greater amount of characters than this guess")
+            print("You got it wrong.")
+            if guessword[0] == password[0]:
+                print("First Letter: ✅")
+            elif guessword[0] == password[1] or guessword[0] == password[2] or guessword[0] == password[3] or guessword[0] == password[4] or guessword[0] == password[5]:
+                print("First Letter: ⭐")
+            else:
+                print("First Letter: ❌")
+            if guessword[1] == password[1]:
+                print("Second Letter: ✅")
+            elif guessword[1] == password[0] or guessword[1] == password[2] or guessword[1] == password[3] or guessword[1] == password[4] or guessword[1] == password[5]:
+                print("Second Letter: ⭐")
+            else:
+                print("Second Letter: ❌")
+            if guessword[2] == password[2]:
+                print("Third Letter: ✅")
+            elif guessword[2] == password[0] or guessword[2] == password[1] or guessword[2] == password[3] or guessword[2] == password[4] or guessword[2] == password[5]:
+                print("Third Letter: ⭐")
+            else:
+                print("Third Letter: ❌")
+            if guessword[3] == password[3]:
+                print("Fourth Letter: ✅")
+            elif guessword[3] == password[0:2] or guessword[3] == password[4:5]:
+                print("Fourth Letter: ⭐")
+            else:
+                print("Fourth Letter: ❌")
+            if guessword[4] == password[4]:
+                print("Fifth Letter: ✅")
+            elif guessword[4] == password[0:3] or guessword[4] == password[5]:
+                print("Fifth Letter: ⭐")
+            else:
+                print("Fifth Letter: ❌")
+            if guessword[5] == password[5]:
+                print("Sixth Letter: ✅")
+            elif guessword[5] == password[0:4] or guessword[5] == password[5]:
+                print("Sixth Letter: ⭐")
+            else:
+                print("Sixth Letter: ❌")
+                guessword = input("Guess the six-letter word!")
+
+
+
+
+
+
+guess()
+print("You won!")
+print(f"The password was: {password}")
