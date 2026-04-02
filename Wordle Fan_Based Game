@@ -8,8 +8,6 @@ password = password.lower()
 
 def guess():
     guessword = input("Guess the six-letter word!")
-    if quit == True:
-        print(f"The password was {password}")
     guessword = guessword.lower()
     if guessword == password:
         print("You won!")
